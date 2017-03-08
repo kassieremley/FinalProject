@@ -1,5 +1,6 @@
 package finalProject;
 
+
 /**
  * @author KR131457
  *
@@ -7,13 +8,14 @@ package finalProject;
 import java.awt.Container;
 import java.awt.Dimension; 
 
+
+???.,mnbxz
+import java.awt.Dimension;
+
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 public class FirstClass 
 {
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args) 
 	{
 		JFrame frame = new JFrame("Snake");
@@ -37,9 +39,16 @@ public class FirstClass
 		frame.setPreferredSize(new Dimension(GamePanel.WIDTH, GamePanel.HEIGHT));
 		frame.setLocationRelativeTo(null);
 		frame.setVisible(true);
+
 	}
 
 }
+
+
+}
+}    
+
+
 
 
 
