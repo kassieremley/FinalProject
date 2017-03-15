@@ -4,6 +4,7 @@ import java.awt.EventQueue;
 import java.io.IOException;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 
 public class Snake extends JFrame {
@@ -18,6 +19,8 @@ public class Snake extends JFrame {
         setTitle("Snake");
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        MainInterface.choice3 = JOptionPane.showOptionDialog(null, "Would you like to play another game?", "GAMES", JOptionPane.YES_NO_CANCEL_OPTION, 
+    			JOptionPane.QUESTION_MESSAGE, null, MainInterface.choice2, MainInterface.choice2[1]);
     }
 
     public static void main(String[] args) {
@@ -33,9 +36,10 @@ public class Snake extends JFrame {
 				}
                 ex.setVisible(true);                
             }
+            
         });
+        
     }
-    
 }
 
 
