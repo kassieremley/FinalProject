@@ -21,6 +21,10 @@ import javax.swing.Timer;
 
 public class Board extends JPanel implements ActionListener {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	String[] size = {"Small","Medium","Large"};
     int[] HEIGHT = {100, 200, 300};
     int[] WIDTH = {100, 200, 300};
@@ -201,7 +205,7 @@ public class Board extends JPanel implements ActionListener {
     }
 
     private void checkCollision() {
-    	if(userInput == 1){
+    	if(userInput == 0){
         for (int z = dots; z > 0; z--) {
 
             if ((z > 4) && (x[0] == x[z]) && (y[0] == y[z])) {
@@ -228,7 +232,7 @@ public class Board extends JPanel implements ActionListener {
         if(!inGame) {
             timer.stop();
         }}
-    	if(userInput == 2){
+    	if(userInput == 1){
             for (int z = dots; z > 0; z--) {
 
                 if ((z > 4) && (x[0] == x[z]) && (y[0] == y[z])) {
@@ -255,7 +259,7 @@ public class Board extends JPanel implements ActionListener {
             if(!inGame) {
                 timer.stop();
             }}
-    	if(userInput == 3){
+    	if(userInput == 2){
             for (int z = dots; z > 0; z--) {
 
                 if ((z > 4) && (x[0] == x[z]) && (y[0] == y[z])) {
