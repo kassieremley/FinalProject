@@ -143,7 +143,7 @@ public class Tetris extends JPanel {
 	}
 	
 	
-	public void dropDown() {
+	public void dropDown(){ 
 		if (!collidesAt(pieceOrigin.x, pieceOrigin.y + 1, rotation)) {
 			pieceOrigin.y += 1;
 		} else {
@@ -151,7 +151,8 @@ public class Tetris extends JPanel {
 		}	
 		repaint();
 	}
-	
+
+
 
 	public void fixToWell() {
 		for (Point p : Tetraminos[currentPiece][rotation]) {
