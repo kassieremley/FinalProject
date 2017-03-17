@@ -12,9 +12,10 @@ public class MainInterface
 		String[] games = {"Snake", "Minesweeper", "Tetris"};
 		String[] choice = {"Yes","No"};
 		int choice1;
-		int choice3 = 0;
+		int choice3 = 1;
 		choice1 = JOptionPane.showOptionDialog(null, "Would you like to play a game?", "GAMES", JOptionPane.YES_NO_CANCEL_OPTION, 
 				JOptionPane.QUESTION_MESSAGE, null, choice, choice[1]);
+	do{
 		if(choice1 == 0)
 		{
 
@@ -43,6 +44,7 @@ public class MainInterface
 		choice3 = JOptionPane.showOptionDialog(null, "Would you like to play another game?", "GAMES", JOptionPane.YES_NO_CANCEL_OPTION, 
     			JOptionPane.QUESTION_MESSAGE, null, MainInterface.choice2, MainInterface.choice2[1]);
 		}
+	}while(choice3 == 0);
 	}
 
 }

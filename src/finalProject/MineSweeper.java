@@ -210,6 +210,7 @@ public class MineSweeper extends JPanel implements AWTEventListener, ActionListe
           isWin = true;
         } else {
           return false;
+          
         }
       }
     }
@@ -221,7 +222,12 @@ public class MineSweeper extends JPanel implements AWTEventListener, ActionListe
           b.setState(State.Marked);
         }
         b.setEnabled(false);
-
+        int returnHome = JOptionPane.showOptionDialog(null, "Return to Home?", "HOME", JOptionPane.YES_NO_CANCEL_OPTION, 
+     			JOptionPane.QUESTION_MESSAGE, null, MainInterface.choice2, MainInterface.choice2[1]);
+    	 if(returnHome == 0)
+    	 {
+    		 MainInterface.main(null);
+    	 }
       }
       JOptionPane.showMessageDialog(this, "You win the game :D", "Congrats", JOptionPane.INFORMATION_MESSAGE, null);
     }
@@ -246,7 +252,8 @@ public class MineSweeper extends JPanel implements AWTEventListener, ActionListe
     }
   }
 
-  private void blastBombs() {
+  @SuppressWarnings("deprecation")
+private void blastBombs() {
     int blastCount = 0;
     for (Component c : pnlMain.getComponents()) {
       ((GameButton) c).setEnabled(false);
@@ -267,6 +274,13 @@ public class MineSweeper extends JPanel implements AWTEventListener, ActionListe
     for (Component c : pnlMain.getComponents()) {
       GameButton b = (GameButton) c;
       b.setEnabled(false);
+      int returnHome = JOptionPane.showOptionDialog(null, "Return to Home?", "HOME", JOptionPane.YES_NO_CANCEL_OPTION, 
+   			JOptionPane.QUESTION_MESSAGE, null, MainInterface.choice2, MainInterface.choice2[1]);
+  	 if(returnHome == 0)
+  	 {
+  		 MainInterface.main(null);
+  	 }
+  	 Thread.currentThread().stop();
     }
   }
 
@@ -431,8 +445,11 @@ public class MineSweeper extends JPanel implements AWTEventListener, ActionListe
           b.setEnabled(false);
         }
         checkGameState();
+        
       }
+      
     }
+    
   }
 
   public void actionPerformed(ActionEvent actionEvent) {
@@ -440,4 +457,10 @@ public class MineSweeper extends JPanel implements AWTEventListener, ActionListe
       restartGame();
     }
   }
-}
+  
+
+	 
+ }
+ 
+
+ 

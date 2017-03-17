@@ -138,6 +138,7 @@ public class Board extends JPanel implements ActionListener {
         } else {
 
             gameOver(g);
+            
         }        
     }
 
@@ -169,6 +170,7 @@ public class Board extends JPanel implements ActionListener {
            g.setFont(small);
            g.drawString(msg, (WIDTH[2] - metr.stringWidth(msg)) / 2, HEIGHT[2] / 2);
        }
+       
     }   
 
     private void checkApple() {
