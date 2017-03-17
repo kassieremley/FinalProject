@@ -18,7 +18,6 @@ public class Snake extends JFrame {
         setTitle("Snake");
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        MainInterface.gameRunning = false;
     }
 
     public static void main(String[] args) {
@@ -33,10 +32,9 @@ public class Snake extends JFrame {
 					e.printStackTrace();
 				}
                 ex.setVisible(true);                
-            }
-            
+            }    
         });
-        
+        MainInterface.gameRunning = false; 
     }
 }
 
