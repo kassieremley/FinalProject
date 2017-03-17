@@ -15,13 +15,17 @@ import java.io.File;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
 public class Board extends JPanel implements ActionListener {
-
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	String[] size = {"Small","Medium","Large"};
     int[] HEIGHT = {100, 200, 300};
     int[] WIDTH = {100, 200, 300};
     private final int DOT_SIZE = 10;
@@ -47,10 +51,12 @@ public class Board extends JPanel implements ActionListener {
     private Image apple;
     private Image head;
     
-    int userInput = Integer.parseInt(JOptionPane.showInputDialog("What size board would you like? \n(1)100 \n(2)200 \n(3)300"));
+ 
+    int userInput = JOptionPane.showOptionDialog(null, "What size board would you like?", "BOARD", JOptionPane.YES_NO_CANCEL_OPTION, 
+			JOptionPane.QUESTION_MESSAGE, null, size, size[2]);
     
     public Board() throws IOException {
-    	if(userInput == 1){
+    	if(userInput == 0){
         addKeyListener(new TAdapter());
         setBackground(Color.black);
         setFocusable(true);
@@ -59,7 +65,7 @@ public class Board extends JPanel implements ActionListener {
         loadImages();
         initGame();
     	}
-    	if(userInput == 2)
+    	if(userInput == 1)
     	{
                 addKeyListener(new TAdapter());
                 setBackground(Color.black);
@@ -70,7 +76,7 @@ public class Board extends JPanel implements ActionListener {
                 initGame();
             	
     	}
-    	if(userInput == 3){
+    	if(userInput == 2){
                 addKeyListener(new TAdapter());
                 setBackground(Color.black);
                 setFocusable(true);
@@ -132,6 +138,7 @@ public class Board extends JPanel implements ActionListener {
         } else {
 
             gameOver(g);
+            
         }        
     }
 
@@ -163,6 +170,7 @@ public class Board extends JPanel implements ActionListener {
            g.setFont(small);
            g.drawString(msg, (WIDTH[2] - metr.stringWidth(msg)) / 2, HEIGHT[2] / 2);
        }
+       
     }   
 
     private void checkApple() {
@@ -199,7 +207,7 @@ public class Board extends JPanel implements ActionListener {
     }
 
     private void checkCollision() {
-    	if(userInput == 1){
+    	if(userInput == 0){
         for (int z = dots; z > 0; z--) {
 
             if ((z > 4) && (x[0] == x[z]) && (y[0] == y[z])) {
@@ -226,7 +234,7 @@ public class Board extends JPanel implements ActionListener {
         if(!inGame) {
             timer.stop();
         }}
-    	if(userInput == 2){
+    	if(userInput == 1){
             for (int z = dots; z > 0; z--) {
 
                 if ((z > 4) && (x[0] == x[z]) && (y[0] == y[z])) {
@@ -253,7 +261,7 @@ public class Board extends JPanel implements ActionListener {
             if(!inGame) {
                 timer.stop();
             }}
-    	if(userInput == 3){
+    	if(userInput == 2){
             for (int z = dots; z > 0; z--) {
 
                 if ((z > 4) && (x[0] == x[z]) && (y[0] == y[z])) {

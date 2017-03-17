@@ -9,7 +9,7 @@ import javax.swing.JFrame;
 public class Snake extends JFrame {
 
     public Snake() throws IOException {
-	
+    	MainInterface.gameRunning = true;
         add(new Board());
         
         setResizable(false);
@@ -32,10 +32,10 @@ public class Snake extends JFrame {
 					e.printStackTrace();
 				}
                 ex.setVisible(true);                
-            }
+            }    
         });
+        MainInterface.gameRunning = false; 
     }
-    
 }
 
 

@@ -286,6 +286,10 @@ public class Tetris extends JPanel {
 					} catch ( InterruptedException e ) {}
 				}
 			}
+			
 		}.start();
+		
+		
 	}
+	
 }
